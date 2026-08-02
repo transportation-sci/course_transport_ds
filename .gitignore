@@ -1,4 +1,6 @@
 /.uvr/library/
 data/raw/
 data/ngsim/
+data/i80
 .vscode
+01_intro_to_r/results/

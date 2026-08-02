@@ -54,38 +54,14 @@ data_ref |>
       TRUE               ~ 3L
     )
   ) |> 
+  dplyr::select(-Global_Time_1000, -n_periods, -b1, -b2) |> 
   dplyr::group_by(Location, Period) |>
   arrow::write_dataset(path = "data/ngsim", format = "parquet")
+
+
 
 ## Sizes:
 tibble::tibble(
   files = list.files("data/ngsim", recursive = TRUE),
   size_MB = file.size(file.path("data/ngsim", files)) / 1024^2
 )
-
-summary_stats_speed <- arrow::open_dataset("data/ngsim") |>
-  dplyr::group_by(Location, Period) |> 
-  dplyr::summarize(median_vel = median(v_Vel),
-                   min_vel = min(v_Vel),
-                   max_vel = max(v_Vel),
-                   percentile_25 = quantile(v_Vel, 0.25),
-                   percentile_75 = quantile(v_Vel, 0.75)) |> 
-  dplyr::collect()
-
-
-ggplot2::ggplot(
-  summary_stats_speed, 
-  ggplot2::aes(x = Period, group = Period, color = Location)
-) +
-  ggplot2::geom_boxplot(
-    ggplot2::aes(
-      ymin   = min_vel,  # Bottom whisker
-      lower  = percentile_25,  # Bottom of the box
-      middle = median_vel,  # Median line
-      upper  = percentile_75,  # Top of the box
-      ymax   = max_vel   # Top whisker
-    ),
-    stat = "identity"    
-  ) +
-  ggplot2::facet_wrap(~ Location)
-
