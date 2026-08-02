@@ -1,0 +1,15 @@
+[project]
+name = "transport_ds"
+r_version = "4.6.1"
+
+[dependencies]
+arrow = "*"
+flextable = "*"
+ggiraph = "*"
+ggplot2 = "*"
+here = "*"
+janitor = "*"
+officer = "*"
+patchwork = "*"
+rvg = "*"
+tidyverse = "*"

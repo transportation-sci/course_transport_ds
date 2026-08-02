@@ -1,0 +1,20 @@
+1. Download and install Positron IDE: https://positron.posit.co/download.html
+
+2. Clone the project folder: In Positron, New > New Folder from Git and enter: 
+
+3. Install uvr:
+ - On Linux or MacOS: curl -fsSL https://raw.githubusercontent.com/nbafrank/uvr/main/install.sh | sh
+ - On Windows: Download uvr-x86_64-pc-windows-msvc from https://github.com/nbafrank/uvr/releases,
+   extract it somwhere safe and add uvr.exe to your system path
+
+4. Install R:
+ - Using uvr: uvr r install 4.6.1
+ - Manual: https://cran.r-project.org/bin/windows/base/
+
+5. Initialize uvr and download dependencies in the project folder: 
+ - If starting from scratch: 
+   * uvr init --r-version "4.6.1"
+   * uvr add tidyverse arrow janitor here ggplot2 patchwork ggiraph flextable rvg officer
+ - From transport_ds folder: uvr sync
+
+6. Select the R version 4.6.1 from .uvr from session menu
