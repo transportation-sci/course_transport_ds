@@ -1,11 +1,12 @@
 1. Download and install Positron IDE: https://positron.posit.co/download.html
 
-2. Clone the project folder: In Positron, New > New Folder from Git and enter: 
+2. Download the project folder from GitHub: https://github.com/transportation-sci/course_transport_ds
+Extract the folder.
 
 3. Install uvr:
  - On Linux or MacOS: curl -fsSL https://raw.githubusercontent.com/nbafrank/uvr/main/install.sh | sh
  - On Windows: Download uvr-x86_64-pc-windows-msvc from https://github.com/nbafrank/uvr/releases,
-   extract it somwhere safe and add uvr.exe to your system path
+   extract it somewhere safe and add uvr.exe to your system path
 
 4. Install R:
  - Using uvr: uvr r install 4.6.1

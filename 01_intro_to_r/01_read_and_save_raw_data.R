@@ -1,7 +1,12 @@
 # Data Details ------------------------------
 ## Download Original NGSIM data: https://datahub.transportation.gov/api/views/8ect-6jqj/rows.csv
+### Save the CSV file in data/raw folder
+
 ## Description: https://datahub.transportation.gov/stories/s/Next-Generation-Simulation-NGSIM-Open-Data/i5zb-xe34/
 ## Dictionary: https://data.transportation.gov/Automobiles/Next-Generation-Simulation-NGSIM-Vehicle-Trajector/8ect-6jqj/about_data
+
+## Working directory
+getwd()
 
 ## Data path
 data_path <- "data/raw/Next_Generation_Simulation__NGSIM__Vehicle_Trajectories_and_Supporting_Data.csv"
