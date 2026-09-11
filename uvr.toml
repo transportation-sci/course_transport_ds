@@ -11,9 +11,5 @@ here = "*"
 janitor = "*"
 officer = "*"
 patchwork = "*"
-plotly = "*"
 rvg = "*"
 tidyverse = "*"
-
-[dependencies.trelliscope]
-git = "trelliscope/trelliscope"

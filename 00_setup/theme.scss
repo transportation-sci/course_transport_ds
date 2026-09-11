@@ -1,0 +1,63 @@
+/*-- scss:defaults --*/
+
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+
+$font-family-sans-serif: Arial, serif !default;
+$font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
+
+$presentation-font-size-root: 34px !default;
+$presentation-line-height: 1.3 !default;
+
+$body-bg: #e3dfd7 !default;
+$body-color: #222222 !default;
+$link-color: #2a76dd !default;
+$presentation-heading-color: #311a02 !default;
+$presentation-heading-font: "Space Mono", Helvetica, sans-serif !default;
+$selection-bg: #6c624d !default;
+
+$code-block-bg: #ddd8ce !default;
+$code-block-color: #222222 !default;
+$code-bg: #ddd8ce !default;
+$code-color: #222222 !default;
+$code-block-font-size: 0.75em; 
+
+$callout-color-note: #6c624d !default;
+
+/*-- scss:rules --*/
+
+.reveal blockquote, .reveal blockquote p {
+  color: #6f6f6f;
+}
+
+.reveal blockquote {
+  border-left-color: #6f6f6f;
+}
+
+.reveal pre code {
+  background-color: #ddd8ce;
+}
+
+.reveal .cell-output pre, .reveal .cell-output pre code {
+  background-color: #ddd8ce;
+}
+
+.reveal pre, .reveal div.sourceCode, .reveal .cell-output pre {
+  border-color: #a9a59e;
+}
+
+.reveal p code, .reveal li code, .reveal td code {
+  padding: 0.06em 0.28em;
+  border-radius: 0.2em;
+}
+
+.reveal .slide-number {
+  color: #222222;
+  background-color: transparent;
+}
+
+.reveal .code-copy-button {
+  color: #6d6b67;
+}
+
+
+

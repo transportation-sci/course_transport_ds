@@ -1,0 +1,129 @@
+---
+title: "Setup"
+subtitle: "Transport Data Science Module 1 | TSLC"
+format:
+  revealjs: 
+    theme: theme.scss
+    width: 1270
+    height: 720
+---
+
+## In the next few minutes, we'll setup:
+
+- Positron IDE
+- `uvr` for installing R Programming language and creating a reproducible environment
+- Git and GitHub for version control and getting the course materials
+
+![](https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExN21pcTNoMnFzdmo2ODF3eTZxYm54MjA5dnF0N2F6MG95a2Zoc29yayZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/xUPGcEliCc7bETyfO8/giphy.gif)
+
+# Positron IDE
+
+## Why Positron?
+
+* IDE = Integrated Development Environment
+* Positron IDE supports R, Python, and Quarto out of the box
+    - Dedicated consoles
+    - Multiple terminals
+    - Version Control
+    - Themes
+
+## Download and install Positron
+
+* Download: [https://positron.posit.co/download.html](https://positron.posit.co/download.html)
+* Use the defaults to install with the downloaded executable
+
+## Change theme (optional)
+ 
+* {{< kbd Shift-Ctrl-P >}} in Positron to open the command palette
+* Then type "color" and select `Preferences: Color Theme`
+* Use the Down/Up arrow keys to preview the default themes
+* `Left-Click` to select a theme
+* Another option in the command palette is `Preferences: Browse Color Themes in Marketplace` that requires a download and you trusting the provider
+
+![](https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExZnk2YnY3MzEzcnY4bGt2azM1OXF6b2dxYWR6Y2x5ZmhrOTBpdnhybCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/i2JX8j1EKCv2oRcrhk/giphy.gif)
+
+## Positron Resources
+
+* Cheatsheet: [https://opensource.posit.co/resources/cheatsheets/positron/](https://opensource.posit.co/resources/cheatsheets/positron/)
+* Mini-course: [https://academy.posit.co/path/introduction-to-positron](https://academy.posit.co/path/introduction-to-positron)
+
+# Git and GitHub
+
+## Git
+
+* Git is a version control system
+  - Track changes in your files and commit them 
+  - See and optionally go back to any previous commits
+* Download and install: [https://git-scm.com/install/windows](https://git-scm.com/install/windows)
+* In a Positron terminal, run the following one after the other to configure your identity:
+
+```powershell
+git config --global user.name "Your Name"
+git config --global user.email "your.email@example.com"
+```
+
+## GitHub
+
+* GitHub is a web interface for storing and managing your version controlled projects 
+* Sign up for a new GitHub account: [https://github.com/signup](https://github.com/signup)
+
+## Authenticate with GitHub
+
+You'd need to create and store a Personal Access Token (PAT) on your system:
+
+  - Go to GitHub -> Click your Profile Picture -> **Settings**
+  - Scroll down the left sidebar and click **Developer settings**
+  - Click **Personal access tokens** -> **Tokens (classic)**
+  - Click **Generate new token** -> **Generate new token (classic)**
+  - Give it a note, set an expiration, and check the box for **repo** 
+  - Scroll to the bottom and click **Generate token** and copy the generated token
+
+## Clone the project folder
+
+* Go to the Transport DS course repo: [https://github.com/transportation-sci/course_transport_ds](https://github.com/transportation-sci/course_transport_ds)
+* Click the green **Code** button and under **Clone -> HTTPS**, copy the URL
+* In a Positron terminal, go to an appropriate location (change the path using `cd <path>`, e.g., in the **Documents** folder) and then run:
+
+```powersehll
+git clone https://github.com/transportation-sci/course_transport_ds.git
+```
+Provide the PAT instead of your password when prompted. `course_transport_ds` folder will be downloaded at the current path. Now close Positron.
+
+# uvr
+
+## What is `uvr`?
+
+> [`uvr`](https://github.com/nbafrank/uvr) is an extremely fast R package manager. The R equivalent of uv for Python.
+
+* Also a project manager: downloads and installs a specific R version and creates a per-project isolated library of packages
+
+::: {.callout-note appearance="simple"}
+An isolated library helps make your project reproducible. You can easily return to the same project and get the same results with all the required dependencies already installed. Or you may give the project folder to someone else and they'd be able to reproduce the results.
+:::
+
+## Install `uvr` and create an isolated env
+
+* Download **uvr-x86_64-pc-windows-msvc** from https://github.com/nbafrank/uvr/releases and extract the zipped `uvr.exe` somewhere safe on your computer
+* Edit the systems variables to create a new entry for the `uvr` path in the `Path` variable
+* Open Positron and click Open -> Open Folder and then select the cloned `course_transport_ds` folder
+* In Positron, open a terminal and run the following one after the other:
+
+```powershell
+uvr r install "4.6.1"
+uvr sync
+```
+
+* This will create `.uvr` folder, and files such as `uvr.lock`, `uvr.toml`, `.Rprofile` and `.gitignore` 
+* Restart Positron and click "Start Session" on the top right and select the R version 4.6.1 in the `your-username/.uvr` folder
+
+# Done!
+
+* Run the following in R console in Positron:
+
+```r
+1+1
+```
+
+If the answer is `2`, you're all set.
+
+![](https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExYTl1dGY2OGlpcDllcHk4cTJ2cnFxd2xwZnM4d3ZzMnhtMWs0enhtYSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/Ftw7aDJxYNOBvLAoQw/giphy.gif)
